@@ -1,17 +1,13 @@
 #!/usr/bin/env node
 
-var mkdirp = require('mkdirp')
-var fs = require('fs')
-var path = require('path')
 var program = require('commander')
 
 
-
-var args = require('commander').parse(process.argv).args;
-var name = args[0]
-
-fs.rmdirSync(path.join('./lib', name))
-fs.unlinkSync(path.join('./lib', name + '.js'), '')
+program.option('-p, --path <path>', 'Adds a path')
+	.parse(process.argv)
 
 
+
+require('../lib/module/index')
+	.remove(program.args[0], require('path').join(process.cwd(), program.path == undefined ? '' : program.path))
 
