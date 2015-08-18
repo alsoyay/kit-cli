@@ -9,7 +9,6 @@
   "author": "Dani Postigo",
   "license": "ISC",
   "devDependencies": {
-    "commander": "^2.8.1",
     "glob": "^5.0.14",
     "handlebars": "~1.0.6",
     "less": "^2.5.1",
@@ -20,5 +19,8 @@
   },
   "bin": {
     "kit": "bin/kit.js"
+  },
+  "dependencies": {
+    "commander": "^2.8.1"
   }
 }
